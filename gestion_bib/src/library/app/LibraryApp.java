@@ -5,7 +5,7 @@ import library.service.*;
 
 public class LibraryApp {
     public static void main(String[] args) {
-        Library library = new Library();
+        ILibrary library = LibraryFactory.getInstance().createLibrary();
 
         Book book1 = new Book("The Catcher in the Rye", "J.D. Salinger");
         Book book2 = new Book("To Kill a Mockingbird", "Harper Lee");

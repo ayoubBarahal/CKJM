@@ -16,7 +16,7 @@ public class Customer {
     public void checkOutItem(Lendable item) {
         if (!checkedOutItems.contains(item)) {
             checkedOutItems.add(item);
-            item.borrow();
+            item.lendingBorrow();
         }
     }
 

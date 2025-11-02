@@ -2,38 +2,49 @@ package library.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import library.model.*;
 
-public class Library {
+public class Library
+        implements ILibrary
+{
     private List<Lendable> items;
 
-    public Library() {
+    public Library()
+    {
         items = new ArrayList<>();
     }
 
-    public void addItem(Lendable item) {
+    public void addItem(Lendable item)
+    {
         items.add(item);
     }
 
-    public void removeItem(Lendable item) {
+    public void removeItem(Lendable item)
+    {
         items.remove(item);
     }
 
     // Méthode volontairement incorrecte pour TP SonarQube
-    public List<Lendable> getAvailableItems() {
-        List<Lendable> availableItems = new ArrayList<>();
+    public List<Lendable> getAvailableItems()
+    {
+        List<Lendable> available = new ArrayList<>();
         for (Lendable item : items) {
-            availableItems.add(item); // ne tient pas compte de l'état borrowed
+            if (!item.isBorrowed()) {
+                available.add(item);
+            }
         }
-        return availableItems;
+        return available;
     }
 
-    public void listAllItems() {
+    public void listAllItems()
+    {
         for (Lendable item : items) {
-            if (item instanceof Book) {
-                Book b = (Book) item;
-                System.out.println(b.getTitle() + " by " + b.getAuthor());
-            } else {
+            if (item instanceof  Book){
+                item.displayInfo();
+            }
+            else {
                 System.out.println("Unknown item type");
             }
         }

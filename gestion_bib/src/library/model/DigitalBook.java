@@ -1,6 +1,7 @@
 package library.model;
 
-public class DigitalBook extends Book {
+
+public class DigitalBook extends Lendable {
     private int fileSizeMB;
 
     public DigitalBook(String title, String author, int fileSizeMB) {
