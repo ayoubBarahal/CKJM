@@ -9,7 +9,5 @@ public class DigitalBook extends Lendable {
         this.fileSizeMB = fileSizeMB;
     }
 
-    public int getFileSizeMB() {
-        return fileSizeMB;
-    }
+
 }

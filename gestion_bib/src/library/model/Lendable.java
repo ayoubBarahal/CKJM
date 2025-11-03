@@ -2,8 +2,7 @@ package library.model;
 
 import library.functions.ComplexeWorkBook;
 
-public abstract class Lendable
-        implements ComplexeWorkBook
+public abstract class Lendable implements ComplexeWorkBook
 {
     private boolean borrowed;
     private String title;
@@ -35,23 +34,12 @@ public abstract class Lendable
         }
     }
 
-    public boolean isBorrowed()
-    {
-        return borrowed;
-    }
+
 
     public void displayInfo()
     {
         System.out.println("Title: " + title + ", Author: " + author + ", Borrowed: " + borrowed);
     }
 
-    public String getTitle()
-    {
-        return title;
-    }
 
-    public String getAuthor()
-    {
-        return author;
-    }
 }

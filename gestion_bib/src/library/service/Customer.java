@@ -13,17 +13,5 @@ public class Customer {
         checkedOutItems = new ArrayList<>();
     }
 
-    public void checkOutItem(Lendable item) {
-        if (!checkedOutItems.contains(item)) {
-            checkedOutItems.add(item);
-            item.lendingBorrow();
-        }
-    }
 
-    public void returnItem(Lendable item) {
-        if (checkedOutItems.contains(item)) {
-            checkedOutItems.remove(item);
-            item.returnItem();
-        }
-    }
 }
